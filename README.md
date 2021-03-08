@@ -6,16 +6,15 @@ Vamos a revisar varios conceptos desde 0 hasta avanzado. Generaremos un proyecto
 
 # **Contenido** 
 
-## HTML & CSS
+## [HTML & CSS](docs/1%20HTML%20&%20CSS/flexbox.md)
 1. HTML & CSS
 2. Flex Box
-3. Grid Css
 
 ## Herramientas en el navegador
-1. Inspector de elementos
-2. Consola del navegador
-3. Revisión de peticiones Network
-4. Tipos de almacenamiento: cookies y localstorage 
+1. [Inspector de elementos](docs/2%20Herramientas%20en%20el%20navegador/herramientas.md)
+2. [Consola del navegador]((docs/2%20Herramientas%20en%20el%20navegador/herramientas.md))
+3. [Revisión de peticiones Network](docs/2%20Herramientas%20en%20el%20navegador/herramientas.md)
+4. [Tipos de almacenamiento: cookies y localstorage](docs/2%20Herramientas%20en%20el%20navegador/Tipos%20de%20almacenamiento.md)
    
 ## Javascrip
 1. Arrays, objects y funciones
