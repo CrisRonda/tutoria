@@ -1,0 +1,33 @@
+html {
+  background: gray;
+}
+header {
+  background: green;
+}
+
+input {
+  background: hotpink;
+}
+
+.mi-input {
+  width: 400px;
+  background: red;
+}
+
+#imagen {
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
+  padding: 168px;
+  margin-bottom: 54px;
+  background: green;
+}
+
+ul li {
+  font-size: 24px;
+  color: purple;
+}
+
+.mi-lista li {
+  color: greenyellow;
+}

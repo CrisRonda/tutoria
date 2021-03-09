@@ -16,7 +16,7 @@ Vamos a revisar varios conceptos desde 0 hasta avanzado. Generaremos un proyecto
 3. [Revisión de peticiones Network](docs/2%20Herramientas%20en%20el%20navegador/herramientas.md)
 4. [Tipos de almacenamiento: cookies y localstorage](docs/2%20Herramientas%20en%20el%20navegador/Tipos%20de%20almacenamiento.md)
    
-## Javascrip
+## Javascript
 1. Arrays, objects y funciones
 2. Promesas
 3. Usando fetch
