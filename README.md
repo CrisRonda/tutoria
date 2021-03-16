@@ -1,5 +1,6 @@
 # Bienvenido al curso de React
 
+
 En este curso vamos a aprender a usar React 17.x.x. 
 
 Vamos a revisar varios conceptos desde 0 hasta avanzado. Generaremos un proyecto final el cual se detalla en [el apartado del proyecto](#proyecto) eso si para facilitar el desarrollo utilizaremos Firebase como backend.
@@ -17,12 +18,11 @@ Vamos a revisar varios conceptos desde 0 hasta avanzado. Generaremos un proyecto
 4. [Tipos de almacenamiento: cookies y localstorage](docs/2%20Herramientas%20en%20el%20navegador/Tipos%20de%20almacenamiento.md)
    
 ## Javascript
-1. Arrays, objects y funciones
-2. Promesas
-3. Usando fetch
-4. Async y await
-5. Ternarias y más
-6. El objeto `window`
+1. [Arrays, objects y funciones](docs/3%20JS/arrays.js)
+2. [Promesas](docs/3%20JS/promises.js)
+3. [Usando fetch](docs/3%20JS/fetch.js)
+4. [Async y await](docs/3%20JS/../3%20JS/async-await.js)
+5. Ternarias y el objeto `window`
 
 ## React 
 1. Hola mundo en React

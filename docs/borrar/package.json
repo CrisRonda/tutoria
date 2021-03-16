@@ -1,0 +1,25 @@
+{
+  "name": "mi-app",
+  "version": "0.0.1",
+  "description": "Este kasdkjkas",
+  "main": "holaMundo.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prehello": "node holaMundo1.js",
+    "hello": "node holaMundo.js",
+    "posthello": "node holaMundo2.js"
+  },
+  "keywords": [
+    "order",
+    "items-orders",
+    "orden"
+  ],
+  "author": "Cristian Ronda",
+  "license": "MIT",
+  "dependencies": {
+    "isomorphic-fetch": "3.0.0"
+  },
+  "devDependencies": {
+    "nodemon": "2.0.7"
+  }
+}
