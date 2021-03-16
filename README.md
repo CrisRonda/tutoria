@@ -1,5 +1,6 @@
 # Bienvenido al curso de React
 
+
 En este curso vamos a aprender a usar React 17.x.x. 
 
 Vamos a revisar varios conceptos desde 0 hasta avanzado. Generaremos un proyecto final el cual se detalla en [el apartado del proyecto](#proyecto) eso si para facilitar el desarrollo utilizaremos Firebase como backend.
