@@ -1,5 +1,5 @@
-require("./arrays");
-require("./objects");
+// require("./arrays");
+// require("./objects");
 // require("./functions");
 // require("./promises");
 // require("./fetch");

@@ -2,9 +2,9 @@ require("isomorphic-unfetch");
 
 const BASE_URL = "https://pokeapi.co/api/v2/pokemon/";
 
-function getPokemonByNameOrID(req) {
+function getPokemonByNameOrID(id) {
   console.log("Buscando pokemon....");
-  fetch(BASE_URL + req)
+  fetch(`${BASE_URL}${id}`)
     .then((res) => {
       console.log("pokemon encontrado....", res.status);
       if (res.ok) {
@@ -12,9 +12,12 @@ function getPokemonByNameOrID(req) {
       }
       throw new Error(`Code error: ${res.status}`);
     })
-    .then(({ name, id, order, species, weight }) =>
-      console.log({ name, id, order, species, weight })
-    )
+    .then((data) => {
+      const { name, id, order, species, weight } = data;
+      // console.log(data);
+      console.log({ name, id, order, species, weight });
+      return { name, id, order, species, weight };
+    })
     .catch((err) =>
       console.log(
         "*******************\n",
@@ -24,4 +27,4 @@ function getPokemonByNameOrID(req) {
       )
     );
 }
-getPokemonByNameOrID("1");
+const pokemon = getPokemonByNameOrID("1jsks");
