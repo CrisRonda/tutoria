@@ -3,5 +3,5 @@
 // require("./functions");
 // require("./promises");
 // require("./fetch");
-// require("./async-await");
+require("./async-await");
 // require("./classes");
