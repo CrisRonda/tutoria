@@ -5,7 +5,8 @@ import {
   CardContent,
   CardMedia,
   Container,
-  Typography
+  TextField,
+  Typography,
 } from "@material-ui/core";
 import React, { useState, useEffect } from "react";
 import PokemonCard from "./components/PokemonCard";
@@ -25,7 +26,7 @@ const getPokemonByNameOrID = async (req) => {
       species,
       weight,
       name,
-      sprites: { front_default }
+      sprites: { front_default },
     } = await res.json();
     return { name, id, order, species, weight, img: front_default };
   } catch (err) {
@@ -37,28 +38,38 @@ const UseEffect = () => {
   const [pokemon, setPokemon] = useState({});
   const [update, setUpdate] = useState(true);
   const [timer, setTimer] = useState(0);
+  // const [name, setName] = useState("");
+  // const [name1, setName1] = useState("");
+
+  // useEffect(() => {
+  //   console.log("Me ejecuto por primera vez");
+  // }, []);
+
+  // useEffect(() => {
+  //   console.log("Estoy observando a name: ", name);
+  // }, [name]);
 
   useEffect(() => {
-    async function getData() {
+    async function getPokemon() {
       const index = getRandomInt(151);
       // console.log("Pidiendo pokemon: ", index);
       const _pokemons = await getPokemonByNameOrID(index);
       setPokemon(_pokemons);
     }
-    getData();
+    getPokemon();
   }, [update]);
 
-  useEffect(() => {
-    async function ticTac() {
-      setInterval(() => {
-        setTimer((bef) => bef + 1);
-      }, 1000);
-    }
-    ticTac();
-    return () => {
-      clearInterval();
-    };
-  }, []); // motrar que pasa cuando se pone mal un observador
+  // useEffect(() => {
+  //   async function ticTac() {
+  //     setInterval(() => {
+  //       setTimer((bef) => bef + 1);
+  //     }, 1000);
+  //   }
+  //   ticTac();
+  //   return () => {
+  //     clearInterval();
+  //   };
+  // }, []);
 
   return (
     <Container>
@@ -70,7 +81,15 @@ const UseEffect = () => {
       >
         Get new pokemon
       </Button>
-      <Card>
+      {/* <TextField
+        value={name}
+        onChange={({ target: { value } }) => setName(value)}
+      />
+      <TextField
+        value={name1}
+        onChange={({ target: { value } }) => setName1(value)}
+      /> */}
+      {/* <Card>
         <CardActionArea>
           <CardMedia
             component="img"
@@ -101,6 +120,16 @@ const UseEffect = () => {
           </CardContent>
         </CardActionArea>
       </Card>
+    */}
+      {/* // si exite el pokemon --> render */}
+      <PokemonCard
+        // name={pokemon.name}
+        // img={pokemon.img}
+        // order={pokemon.order}
+        // weight={pokemon.weight}
+        // id={pokemon.id}
+        {...pokemon}
+      />
     </Container>
   );
 };

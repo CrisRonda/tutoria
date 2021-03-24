@@ -25,6 +25,11 @@ const theme = createMuiTheme({
         padding: 8,
       },
     },
+    MuiTypography: {
+      root: {
+        marginBottom: "12px !important",
+      },
+    },
   },
   palette: {
     primary: {

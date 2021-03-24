@@ -11,8 +11,11 @@ const Example = () => {
   const [counter, setCounter] = useState(0);
   // const [name, setName] = useState("");
   // const [age, setAge] = useState("");
-  // const [person, setperson] = useState("");
-  // const [persons, setpersons] = useState([]);
+  const [person, setperson] = useState({
+    name: "",
+    age: 0,
+  });
+  const [persons, setpersons] = useState([]);
 
   const handleAdd = () => setCounter((prev) => (prev >= 10 ? prev : prev + 1));
 
@@ -44,10 +47,10 @@ const Example = () => {
           variant="outlined"
           label="Ingresa un nombre"
           placeholder="Ejemplo Mariana"
-          value={name}
+          value={person.name}
           onChange={({ target: { value } }) => {
-            setName(value);
             setperson((prev) => ({ ...prev, name: value }));
+            // setName(value);
           }}
         />
         <TextField
@@ -55,9 +58,10 @@ const Example = () => {
           label="Ingresa la edad"
           placeholder="Ejemplo 12"
           type="number"
-          value={age}
+          value={person.age}
+          inputProps={{ max: 10, min: 0 }}
           onChange={({ target: { value } }) => {
-            setAge(value);
+            // setAge(value);
             setperson((prev) => ({ ...prev, age: value }));
           }}
         />
@@ -65,26 +69,26 @@ const Example = () => {
           variant="outlined"
           color="primary"
           onClick={() => {
+            // [{name: 'hola1', age: 12}, {name:'Asd', age:23}]
             setpersons((prev) => [...prev, person]);
-            setName("");
-            setAge("");
-            setperson({});
+            // setName("");
+            // setAge("");
+            setperson({
+              name: "",
+              age: 0,
+            });
           }}
         >
           Agregar un nuevo elemento
         </Button>
-        {persons.map(({ name, age }) => (
-          <Box
-            key={`${name}-${age}`}
-            display="flex"
-            justifyContent="space-around"
-          >
+        {persons.map(({ name, age }, index) => (
+          <Box key={index} display="flex" justifyContent="space-around">
             <Typography>{name}</Typography>
             <Typography>{age}</Typography>
           </Box>
         ))}
       </Box>
-    */}
+     */}
     </Container>
   );
 };
