@@ -5,23 +5,27 @@ import {
   CardActionArea,
   CardActions,
   CardMedia,
-  Typography
+  Typography,
+  makeStyles,
 } from "@material-ui/core";
 import React, { useContext, useEffect } from "react";
 import UserContext from "../context/User/context";
+import mystyles from "./styles";
+
+const useStyles = makeStyles(mystyles);
 
 const UsersList = () => {
   const userContext = useContext(UserContext);
-
+  const classes = useStyles();
   useEffect(() => {
     userContext.getUsers();
   }, []);
 
   return (
-    <Box display="flex" flexWrap="wrap">
-      {userContext.users.length
+    <Box className={classes.root}>
+      {userContext.users.length > 0
         ? userContext.users.map((user) => (
-            <Card key={user.id}>
+            <Card key={user.id} className={classes.card}>
               <CardMedia
                 component="img"
                 alt={user.first_name}
@@ -37,6 +41,7 @@ const UsersList = () => {
                 <Button
                   onClick={() => userContext.getProfile(user.id)}
                   size="small"
+                  className={classes.button}
                 >
                   Ver perfil
                 </Button>

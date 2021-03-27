@@ -1,27 +1,28 @@
 import { Box, Button, Container, Typography } from "@material-ui/core";
-import React, { useState, useCallback, useMemo } from "react";
+import React, { useState, useCallback, useMemo, memo } from "react";
 
 const UseExample = () => {
   const [counterA, setCounterA] = useState(0);
   const [counterB, setCounterB] = useState(0);
   const [update, setUpdate] = useState(false);
+  // const sum = () => {
+  //   console.log("SUM: ", { counterA, counterB });
+  //   return counterA + counterB;
+  // };
   const sum = useCallback(() => {
-    console.log("SUM: ", { counterA, counterB });
+    console.log("Me ejecuto en el callback");
     return counterA + counterB;
   }, [counterB]);
+
   // cambiar el metodo por una variable
-  const hardFunction = useMemo(() => {
-    console.log("HARDFUNC: ", { counterA, counterB });
+
+  const _hardFunction = () => {
+    console.log("me ejecuto", { counterA });
     let i = 0;
-    while (i < 2_000_000_000) i++;
+    // while (i < 2_000_000_000) i++; // --> Proceso muy pesado de calcular
     return counterA % 2 == 0 ? "Es par" : "Es impar";
-  }, [counterA]);
-  // const hardFunction = () => {
-  //   console.log("me ejecuto", { counterA, counterB });
-  //   let i = 0;
-  //   while (i < 2_000_000_000) i++;
-  //   return counterA % 2 == 0 ? "Es par" : "Es impar";
-  // };
+  };
+  const hardFunction = useMemo(() => _hardFunction(), [counterA]); //-> 2s ó las llamadas al API (SON DEMASIADOS DATOS)
 
   return (
     <Container>
@@ -72,4 +73,4 @@ const UseExample = () => {
   );
 };
 
-export default UseExample;
+export default memo(UseExample); // tareas muy pesadas, o en mapas

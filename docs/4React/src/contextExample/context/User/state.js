@@ -6,10 +6,10 @@ import UserReducer from "./reducer";
 
 import { GET_USERS, GET_PROFILE } from "../types";
 
-const UserState = (props) => {
+const UserState = ({ children }) => {
   const initialState = {
     users: [],
-    selectedUser: null
+    selectedUser: null,
   };
 
   const [state, dispatch] = useReducer(UserReducer, initialState);
@@ -26,10 +26,13 @@ const UserState = (props) => {
 
   const getProfile = async (id) => {
     try {
-      const res = await axios.get("https://reqres.in/api/users/" + id);
-      const { data } = res;
-      dispatch({ type: GET_PROFILE, payload: data.data });
-    } catch (error) {}
+      const {
+        data: { data },
+      } = await axios.get("https://reqres.in/api/users/" + id);
+      dispatch({ type: GET_PROFILE, payload: data });
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   return (
@@ -38,10 +41,10 @@ const UserState = (props) => {
         users: state.users,
         selectedUser: state.selectedUser,
         getUsers,
-        getProfile
+        getProfile,
       }}
     >
-      {props.children}
+      {children}
     </UserContext.Provider>
   );
 };
